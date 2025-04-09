@@ -14,7 +14,8 @@ WORKDIR /app
 
 # Copia os arquivos
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt && \
+    playwright install --with-deps
 
 COPY app/ ./app/
 COPY start.sh .

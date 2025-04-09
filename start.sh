@@ -1,7 +1,6 @@
 #!/bin/bash
 
-# Instala navegadores Playwright (Chromium, Firefox, WebKit)
-playwright install --with-deps
+echo "Iniciando na porta: ${PORT:-8000}"
 
-# Inicia a aplicação FastAPI
-uvicorn app.main:app --host 0.0.0.0 --port 8000
+# Inicia o servidor Uvicorn na porta correta do Render (ou 8000 localmente)
+uvicorn app.main:app --host 0.0.0.0 --port "${PORT:-8000}"
