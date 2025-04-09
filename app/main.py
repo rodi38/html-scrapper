@@ -23,8 +23,6 @@ async def scrape(request: Request):
     try:
         print("scrapping")
         html = await fetch_html(url)
-        print("scrapped:")
-        print(html)
         return {"html": html}
     except Exception as e:
         return {"error": str(e)}
